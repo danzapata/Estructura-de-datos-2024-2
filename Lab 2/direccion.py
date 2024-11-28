@@ -19,10 +19,16 @@ class Direccion:
         self._ciudad = city
 
     def setEdificio(self, edi):
-        self._Edificio = edi
+        if edi != "":
+            self._Edificio = edi
+        else: 
+            self._Edificio = None
 
     def setApto(self, apt):
-        self._Apto = apt
+        if apt!="":
+            self._Apto = apt
+        else:
+            self._Apto = None
 
     # Métodos getter
     def getCalle(self):
