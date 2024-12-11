@@ -2,8 +2,15 @@
 class Direccion:
     
     # Constructor 
-    def __init__(self):
-        pass
+    def __init__(self, lista = "Calle número barrio ciudad edificio apto"):
+
+        completa = lista.split(" ")
+        self._calle = completa[0]
+        self._nomenclatura = completa[1]
+        self._barrio = completa[2]
+        self._ciudad = completa[3]
+        self._Edificio = completa[4]
+        self._Apto = completa[5]
 
     # Métodos setter
     def setCalle(self, calle):
@@ -51,4 +58,4 @@ class Direccion:
     
     # Método toString
     def __str__(self):
-        return f"[Calle {self._calle}, Número {self._nomenclatura}, Barrio {self._barrio}, Ciudad {self._ciudad}, Edificio {self._Edificio}, Apto {self._Apto}]"
+        return f"{self._calle} {self._nomenclatura} {self._barrio} {self._ciudad} {self._Edificio} {self._Apto}"

@@ -29,4 +29,4 @@ class Fecha:
     
     # Método toString
     def __str__(self):
-        return f"{self._dd}-{self._mm}-{self._aa}"
+        return f"{self._dd} {self._mm} {self._aa}"
