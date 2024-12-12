@@ -1,2 +1,4 @@
-juan 777 24-7-2005 Medellín 3214256 danzapata@unal.edu.co [Calle 57, Número 6927, Barrio Trapiche, Ciudad Bello, Edificio 16, Apto 1359]
-Isabella 555 25-11-2007 Medellín 542142142 isa@gmail.com [Calle 57, Número 6927, Barrio Trapiche, Ciudad Bello, Edificio 16, Apto 1359]
+Daniel 666 24 7 2005 Medellin 3214256 danzapata@unal.edu.co 57 6927 Trapiche Bello 16 1359
+juan 777 24 7 2005 Medellin 3214256 danzapata@unal.edu.co 53 3212 Candelaria Medellin 1 412
+Isabella 555 25 11 2007 Medellin 542142142 isa@gmail.com 57 6927 Trapiche Bello 16 1359
+Luis-Angel 111 25 11 2007 Medellin 542142142 isa@gmail.com 43 4042 Buenos-Aires Medellin None None

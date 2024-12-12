@@ -42,13 +42,16 @@ class Agenda:
             self._no_reg-=1
             return True
         
-    def toFile(self):
-        with open("agenda.txt", "w") as texto:
+    def toFile(self, documento):
+        with open(documento, "w") as texto:
             for i in range(0, self._no_reg, 1):
-                texto.write(f"{self._registro[i].__str__()}\n")
+                if i == (self._no_reg-1):
+                    texto.write(f"{self._registro[i].__str__()}")
+                else: 
+                    texto.write(f"{self._registro[i].__str__()}\n")               
 
-    def importar(self):
-        with open("agenda.txt", "r") as texto:
+    def importar(self, documento):
+        with open(documento, "r") as texto:
             leer = texto.read()
             usuarios = leer.split("\n")
             
@@ -82,39 +85,39 @@ if __name__ == "__main__":
     miUsuario.setFecha_Nacimiento(miFecha)
     miUsuario.setEmail("danzapata@unal.edu.co")
     miUsuario.setDir(miDir)
-    miUsuario.setCiudad_nacimiento("Medellín")
+    miUsuario.setCiudad_nacimiento("Medellin")
     agenda.agregar(miUsuario)
 
     miFecha = Fecha(24, 7, 2005)
     miDir = Direccion()
-    miDir.setCiudad("Bello")
-    miDir.setBarrio("Trapiche")
-    miDir.setCalle(57)
-    miDir.setNomenclatura(6927)
-    miDir.setEdificio(16)
-    miDir.setApto("1359")
+    miDir.setCiudad("Medellin")
+    miDir.setBarrio("Candelaria")
+    miDir.setCalle(53)
+    miDir.setNomenclatura(3212)
+    miDir.setEdificio(1)
+    miDir.setApto("412")
     miUsuario = Usuario("juan", 777)
     miUsuario.setTel(3214256)
     miUsuario.setFecha_Nacimiento(miFecha)
     miUsuario.setEmail("danzapata@unal.edu.co")
     miUsuario.setDir(miDir)
-    miUsuario.setCiudad_nacimiento("Medellín")
+    miUsuario.setCiudad_nacimiento("Medellin")
     agenda.agregar(miUsuario)
 
     miFecha = Fecha(24, 7, 2005)
     miDir = Direccion()
     miDir.setCiudad("Bello")
-    miDir.setBarrio("Trapiche")
-    miDir.setCalle(57)
-    miDir.setNomenclatura(6927)
-    miDir.setEdificio(16)
-    miDir.setApto("1359")
-    miUsuario = Usuario("Daniel", 666)
+    miDir.setBarrio("barrio-nuevo")
+    miDir.setCalle(27)
+    miDir.setNomenclatura(2423)
+    miDir.setEdificio("")
+    miDir.setApto("")
+    miUsuario = Usuario("Jose", 999)
     miUsuario.setTel(3214256)
     miUsuario.setFecha_Nacimiento(miFecha)
     miUsuario.setEmail("danzapata@unal.edu.co")
     miUsuario.setDir(miDir)
-    miUsuario.setCiudad_nacimiento("Medellín")
+    miUsuario.setCiudad_nacimiento("Medellin")
     agenda.agregar(miUsuario)
 
     miFecha = Fecha(25, 11, 2007)
@@ -130,9 +133,26 @@ if __name__ == "__main__":
     miUsuario.setFecha_Nacimiento(miFecha)
     miUsuario.setEmail("isa@gmail.com")
     miUsuario.setDir(miDir)
-    miUsuario.setCiudad_nacimiento("Medellín")
+    miUsuario.setCiudad_nacimiento("Medellin")
     agenda.agregar(miUsuario)
 
-    agenda.importar()
-    for i in agenda._registro:
-        print(i)
+    miFecha = Fecha(25, 11, 2007)
+    miDir = Direccion()
+    miDir.setCiudad("Medellin")
+    miDir.setBarrio("Buenos-Aires")
+    miDir.setCalle(43)
+    miDir.setNomenclatura(4042)
+    miDir.setEdificio("")
+    miDir.setApto("")
+    miUsuario = Usuario("Luis-Angel", 111)
+    miUsuario.setTel(542142142)
+    miUsuario.setFecha_Nacimiento(miFecha)
+    miUsuario.setEmail("isa@gmail.com")
+    miUsuario.setDir(miDir)
+    miUsuario.setCiudad_nacimiento("Medellin")
+    agenda.agregar(miUsuario)  
+
+    print("Buscando usuario: ")
+    print(agenda.buscar(111))
+
+    agenda.toFile("agenda.txt")
