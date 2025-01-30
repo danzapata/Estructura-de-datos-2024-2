@@ -1,0 +1,4 @@
+Marta-Gonzales 3345345535 TELEFONO_IP 23343333 01 04 2006 234234 agregar aceptar
+Marta-Gonzales 3345345535 50245312 si eliminar aceptar
+Demetrio-Zapata 3277122442 CPURYZEN_6T_4GB 50661232 03 09 2014 1590000 agregar aceptar
+Demetrio-Zapata 3277122442 CAMARA_BASIER 50109829 01 02 2023 2734000 agregar aceptar
