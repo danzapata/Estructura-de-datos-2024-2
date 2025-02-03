@@ -22,14 +22,14 @@ class TurnoUsuario:
 
     def toFile(self):
         # Texto cola
-        txtCola = open("usuariosPendientes.txt", "w")
+        txtCola = open("Lab 6/usuariosPendientes.txt", "w")
         for i in range(0, self._registro.size()):
             temp = self._registro.dequeue().getData()
             txtCola.write(f"{temp.getNombre()} {str(temp.getId())}\n")
         txtCola.close()
 
         # Texto pila
-        txtPila = open("usuariosAtendios.txt", "w")
+        txtPila = open("Lab 6/usuariosAtendios.txt", "w")
         for i in range(0, self._usuarioAtendido.size()):
             temp = self._usuarioAtendido.pop().getData()
             txtPila.write(f"{temp.getNombre()} {str(temp.getId())}\n")
