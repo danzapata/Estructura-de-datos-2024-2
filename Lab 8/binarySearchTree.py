@@ -93,9 +93,8 @@ if __name__ == "__main__":
 
     print("\nPrueba 1 Lab 8")
 
-    # Creamos un árbol y agregamos las entradas 
+    # Creamos un árbol y insertamos entradas
     arbol = BinarySearchTree()
-
     arbol.insert("15", 15)
     arbol.insert("9", 9)
     arbol.insert("40", 40)
@@ -105,10 +104,20 @@ if __name__ == "__main__":
     arbol.insert("20", 20)
     arbol.insert("4", 4)
     arbol.insert("8", 8)
+    print("-----------------")
+    arbol.print_tree()
 
+    # Mostrar en orden 
     arbol.inorder(arbol._root)
 
+    # Eliminar elemento
     arbol.remove(arbol.find(20))
     print("-----------------")
     arbol.print_tree()
     
+    # Buscar elemento
+    print("\n-----------------")
+    print("busqueda de elemento: ",arbol.find(40).getData())
+    # Imprimir máximo y mínimo
+    print("Número máximo",arbol.maximo(arbol._root).getData())
+    print("Número mínimo",arbol.minimo(arbol._root).getData())
