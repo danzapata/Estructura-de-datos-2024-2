@@ -1,6 +1,7 @@
 # Importaciones
 from queue import Queue
 from nodoDoble import NodoDoble
+from nodoSimple import NodoSimple
 
 # Clase 
 class BinaryTree:
@@ -64,22 +65,44 @@ class BinaryTree:
             return 1+h
         
     # Conseguir padre
-    def parent(self, nodo):
+    def Parent(self, nodo):
         if self.isRoot(nodo):
             return None
         else:
             cola = Queue()
             cola.enqueue(self._root)
             temp = self._root
-
-            while cola.isEmpty()!=True and self.left(cola.first())!=nodo and self.right(cola.first())!=nodo:
+            while cola.isEmpty()!=True and self.left(cola.first().getData())!=nodo and self.right(cola.first().getData())!=nodo:
+                print(nodo.getData())
+                print(cola.first().getData())
                 temp = cola.dequeue()
+                temp = temp.getData()
                 if self.hasLeft(temp):
                     cola.enqueue(self.left(temp))
                 if self.hasRight(temp):
                     cola.enqueue(self.right(temp))
             return temp
-    
+        
+    # Parent 
+    def parent(self, nodo):
+        if self.isRoot(nodo):
+            return None
+        else:
+            cola = Queue()
+            cola.enqueue(self._root)
+            while cola.isEmpty()!=True:
+                temp = cola.dequeue()
+                temp = temp.getData() 
+                if self.hasLeft(temp) and self.left(temp)==nodo:
+                    return temp
+                if self.hasRight(temp) and self.right(temp)==nodo:
+                    return temp
+                if self.hasLeft(temp):
+                    cola.enqueue(self.left(temp))
+                if self.hasRight(temp):
+                    cola.enqueue(self.right(temp))
+            return None
+        
     # Agregar al arbol
     def addRoot(self, objeto):
         self._root = NodoDoble(objeto)
@@ -116,6 +139,7 @@ class BinaryTree:
             nodo.setNext(None)
 
         else:
+            print("Entró acá", nodo.getData(),"y",self.right(padre).getData())
         # Caso en que no tiene hijos
             if self.left(padre) == nodo:
                 padre.setPrev(None)
@@ -126,7 +150,7 @@ class BinaryTree:
 
     # Visitar
     def visit(self, nodo):
-        print("Nodo:",nodo.getData())
+        print("BST Entry con:",nodo.getData())
 
     # Minimo 
     def minimo(self, nodo):
